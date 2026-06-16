@@ -1,0 +1,526 @@
+{
+  "title": "AI/ML Test — Modules 4 & 5",
+  "passing": 60,
+  "questions": [
+    {
+      "id": 1,
+      "q": "What does 'supervised learning' mean?",
+      "options": [
+        "Each row has a known answer (label) to learn from",
+        "The data has no answers",
+        "The model trains itself with no data",
+        "It only works on images"
+      ],
+      "answer": 0,
+      "topic": "M4",
+      "explain": "Supervised = the data already has the answer (label y) the model learns to predict."
+    },
+    {
+      "id": 2,
+      "q": "Why do we split data into a training set and a test set?",
+      "options": [
+        "To make training faster",
+        "To check the model on data it has NOT seen before",
+        "To use more memory",
+        "To remove duplicates"
+      ],
+      "answer": 1,
+      "topic": "M4",
+      "explain": "The test set is an honest exam: data the model never saw during training."
+    },
+    {
+      "id": 3,
+      "q": "`test_size=0.2` in train_test_split means:",
+      "options": [
+        "20% goes to training",
+        "20 rows are used",
+        "20% goes to testing, 80% to training",
+        "the model trains 20 times"
+      ],
+      "answer": 2,
+      "topic": "M4",
+      "explain": "0.2 = 20% held out for testing; the rest (80%) is for training."
+    },
+    {
+      "id": 4,
+      "q": "What does `random_state=42` do?",
+      "options": [
+        "Makes the model 42% accurate",
+        "Adds 42 random rows",
+        "Speeds up training",
+        "Makes the split the same every time (reproducible)"
+      ],
+      "answer": 3,
+      "topic": "M4",
+      "explain": "A fixed random_state makes the random split repeatable, so everyone gets the same result."
+    },
+    {
+      "id": 5,
+      "q": "What is 'data leakage'?",
+      "options": [
+        "When test information sneaks into training and gives a fake-high score",
+        "Losing rows of data",
+        "When the file is corrupted",
+        "When the model is too small"
+      ],
+      "answer": 0,
+      "topic": "M4",
+      "explain": "Leakage = the model secretly sees test info during training, so the score looks better than reality."
+    },
+    {
+      "id": 6,
+      "q": "When you scale features, you should fit the scaler on:",
+      "options": [
+        "the whole dataset",
+        "the training set only",
+        "the test set only",
+        "a random 50%"
+      ],
+      "answer": 1,
+      "topic": "M4",
+      "explain": "Fit on TRAIN only, then apply to test. Fitting on test data is cheating."
+    },
+    {
+      "id": 7,
+      "q": "Linear Regression is used to predict:",
+      "options": [
+        "a yes/no label",
+        "a category",
+        "a continuous number (like price)",
+        "a cluster"
+      ],
+      "answer": 2,
+      "topic": "M4",
+      "explain": "Linear Regression predicts a continuous number."
+    },
+    {
+      "id": 8,
+      "q": "Logistic Regression is mainly used for:",
+      "options": [
+        "regression (numbers)",
+        "clustering",
+        "scaling",
+        "classification (yes/no or categories)"
+      ],
+      "answer": 3,
+      "topic": "M4",
+      "explain": "Despite its name, Logistic Regression does classification."
+    },
+    {
+      "id": 9,
+      "q": "How does a Decision Tree make a prediction?",
+      "options": [
+        "By a chain of yes/no questions (splits)",
+        "By averaging all rows",
+        "By measuring distance to a center",
+        "By random guessing"
+      ],
+      "answer": 0,
+      "topic": "M4",
+      "explain": "A tree walks down yes/no questions until it reaches a leaf (the answer)."
+    },
+    {
+      "id": 10,
+      "q": "A Random Forest is:",
+      "options": [
+        "one very deep tree",
+        "many decision trees that vote together",
+        "a type of neural network",
+        "a scaling method"
+      ],
+      "answer": 1,
+      "topic": "M4",
+      "explain": "Random Forest = many trees; they vote (classification) or average (regression)."
+    },
+    {
+      "id": 11,
+      "q": "MAE stands for:",
+      "options": [
+        "Most Accurate Estimate",
+        "Maximum Average Error",
+        "Mean Absolute Error",
+        "Mean Aligned Error"
+      ],
+      "answer": 2,
+      "topic": "M4",
+      "explain": "MAE = Mean Absolute Error — the average size of the mistakes."
+    },
+    {
+      "id": 12,
+      "q": "Compared to MAE, RMSE:",
+      "options": [
+        "ignores big mistakes",
+        "is always smaller",
+        "is the same thing",
+        "punishes big mistakes more"
+      ],
+      "answer": 3,
+      "topic": "M4",
+      "explain": "RMSE squares the errors, so big mistakes hurt it more than MAE."
+    },
+    {
+      "id": 13,
+      "q": "If RMSE is much bigger than MAE, it usually means:",
+      "options": [
+        "there are a few big mistakes (outliers)",
+        "the model is perfect",
+        "the data is too small",
+        "you forgot to scale"
+      ],
+      "answer": 0,
+      "topic": "M4",
+      "explain": "A big gap between RMSE and MAE signals some large individual errors."
+    },
+    {
+      "id": 14,
+      "q": "An R² score of 1.0 means:",
+      "options": [
+        "the model is useless",
+        "the predictions are perfect",
+        "half the predictions are right",
+        "the data is imbalanced"
+      ],
+      "answer": 1,
+      "topic": "M4",
+      "explain": "R² = 1 → perfect predictions. R² = 0 → no better than the average."
+    },
+    {
+      "id": 15,
+      "q": "An R² score of 0 means the model:",
+      "options": [
+        "is perfect",
+        "has no data",
+        "is no better than just predicting the average (a lazy baseline)",
+        "is overfitting"
+      ],
+      "answer": 2,
+      "topic": "M4",
+      "explain": "R² = 0 means the model performs like the always-predict-the-mean baseline."
+    },
+    {
+      "id": 16,
+      "q": "Accuracy is defined as:",
+      "options": [
+        "TP / (TP + FP)",
+        "the average error",
+        "the number of clusters",
+        "correct predictions / total predictions"
+      ],
+      "answer": 3,
+      "topic": "M4",
+      "explain": "Accuracy = how many predictions were correct out of all of them."
+    },
+    {
+      "id": 17,
+      "q": "Accuracy can be misleading when:",
+      "options": [
+        "the classes are imbalanced (one is much rarer)",
+        "the data is balanced",
+        "there are 2 features",
+        "the model is a tree"
+      ],
+      "answer": 0,
+      "topic": "M4",
+      "explain": "On imbalanced data, always predicting the majority class looks accurate but is useless."
+    },
+    {
+      "id": 18,
+      "q": "Precision answers the question:",
+      "options": [
+        "How many real positives did we catch?",
+        "Of the ones we predicted positive, how many are truly positive?",
+        "How fast is the model?",
+        "How many clusters are there?"
+      ],
+      "answer": 1,
+      "topic": "M4",
+      "explain": "Precision = TP / (TP + FP): how trustworthy the positive predictions are."
+    },
+    {
+      "id": 19,
+      "q": "Recall answers the question:",
+      "options": [
+        "How many predictions were positive?",
+        "How tight are the clusters?",
+        "Of the truly positive cases, how many did we catch?",
+        "What is the average error?"
+      ],
+      "answer": 2,
+      "topic": "M4",
+      "explain": "Recall = TP / (TP + FN): how many of the real positives we found."
+    },
+    {
+      "id": 20,
+      "q": "The F1 score is:",
+      "options": [
+        "the sum of precision and recall",
+        "always equal to accuracy",
+        "the number of false positives",
+        "a balance (harmonic mean) of precision and recall"
+      ],
+      "answer": 3,
+      "topic": "M4",
+      "explain": "F1 balances precision and recall; it drops toward the smaller of the two."
+    },
+    {
+      "id": 21,
+      "q": "'Unsupervised learning' means:",
+      "options": [
+        "the data has NO labels — we find hidden groups ourselves",
+        "the data has labels",
+        "we use two models",
+        "we only predict numbers"
+      ],
+      "answer": 0,
+      "topic": "M5",
+      "explain": "Unsupervised = no answer column; we discover structure (groups) on our own."
+    },
+    {
+      "id": 22,
+      "q": "Clustering is:",
+      "options": [
+        "predicting a number",
+        "putting similar points into groups (with no answer key)",
+        "splitting train and test",
+        "scaling features"
+      ],
+      "answer": 1,
+      "topic": "M5",
+      "explain": "Clustering groups similar rows together when there are no labels."
+    },
+    {
+      "id": 23,
+      "q": "In K-Means, a 'centroid' (center) is:",
+      "options": [
+        "a real data point picked at random",
+        "the biggest value",
+        "the average position of the points in a group",
+        "the target label"
+      ],
+      "answer": 2,
+      "topic": "M5",
+      "explain": "A center is the mean (average) position of its group — usually NOT a real data point."
+    },
+    {
+      "id": 24,
+      "q": "True or false: a K-Means center is always one of the real data points.",
+      "options": [
+        "True",
+        "True, the first row",
+        "True, the last row",
+        "False — it is a made-up average point"
+      ],
+      "answer": 3,
+      "topic": "M5",
+      "explain": "The center is an invented average location, not necessarily any real point."
+    },
+    {
+      "id": 25,
+      "q": "The K-Means loop is:",
+      "options": [
+        "assign each point to the nearest center, move each center to the average, repeat",
+        "scale, then train once",
+        "merge the two closest groups",
+        "drop outliers"
+      ],
+      "answer": 0,
+      "topic": "M5",
+      "explain": "Assign → move → assign → move … until the centers stop moving."
+    },
+    {
+      "id": 26,
+      "q": "K-Means stops (converges) when:",
+      "options": [
+        "after exactly 3 rounds",
+        "the centers stop moving / points stop switching groups",
+        "the data is scaled",
+        "inertia is 1.0"
+      ],
+      "answer": 1,
+      "topic": "M5",
+      "explain": "Convergence = nothing changes anymore."
+    },
+    {
+      "id": 27,
+      "q": "In K-Means you must choose:",
+      "options": [
+        "nothing — it finds K itself",
+        "the linkage type",
+        "the number of groups K, before running",
+        "the eps value"
+      ],
+      "answer": 2,
+      "topic": "M5",
+      "explain": "K-Means needs K up front (use the elbow/silhouette to choose it)."
+    },
+    {
+      "id": 28,
+      "q": "What does `n_init=10` do in K-Means?",
+      "options": [
+        "uses 10 features",
+        "makes 10 clusters",
+        "trains for 10 seconds",
+        "runs 10 times from different random starts and keeps the best"
+      ],
+      "answer": 3,
+      "topic": "M5",
+      "explain": "K-Means depends on the starting spot, so it tries 10 starts and keeps the tightest result."
+    },
+    {
+      "id": 29,
+      "q": "Why must you scale features before K-Means?",
+      "options": [
+        "because it uses distance, so a big-number column would dominate",
+        "to make it faster",
+        "to remove labels",
+        "to build a tree"
+      ],
+      "answer": 0,
+      "topic": "M5",
+      "explain": "K-Means measures distance; without scaling, large-range features drown out small ones."
+    },
+    {
+      "id": 30,
+      "q": "'Inertia' in K-Means measures:",
+      "options": [
+        "the number of clusters",
+        "how tight the groups are (total distance from points to their center)",
+        "the accuracy",
+        "the speed"
+      ],
+      "answer": 1,
+      "topic": "M5",
+      "explain": "Lower inertia = tighter groups. More clusters always lowers it."
+    },
+    {
+      "id": 31,
+      "q": "The elbow method helps you:",
+      "options": [
+        "scale the data",
+        "remove outliers",
+        "choose K by finding the 'bend' in the inertia-vs-K plot",
+        "pick the linkage"
+      ],
+      "answer": 2,
+      "topic": "M5",
+      "explain": "Plot inertia vs K and pick the K where adding more groups stops helping much."
+    },
+    {
+      "id": 32,
+      "q": "The silhouette score tells you:",
+      "options": [
+        "how fast the model is",
+        "the number of features",
+        "the training size",
+        "how well each point fits its group (higher = better)"
+      ],
+      "answer": 3,
+      "topic": "M5",
+      "explain": "Silhouette (−1 to 1) measures fit; higher average means cleaner clusters."
+    },
+    {
+      "id": 33,
+      "q": "Hierarchical (agglomerative) clustering works by:",
+      "options": [
+        "starting with each point alone and repeatedly merging the two closest groups",
+        "picking K random centers",
+        "measuring density",
+        "splitting data in half"
+      ],
+      "answer": 0,
+      "topic": "M5",
+      "explain": "Bottom-up: every point starts alone, then the closest groups keep merging into a tree."
+    },
+    {
+      "id": 34,
+      "q": "In hierarchical clustering, you choose the number of groups by:",
+      "options": [
+        "setting K before running",
+        "cutting the dendrogram (tree) at a chosen height — after seeing it",
+        "setting eps",
+        "running n_init"
+      ],
+      "answer": 1,
+      "topic": "M5",
+      "explain": "You don't pick K up front; you cut the tree where you like."
+    },
+    {
+      "id": 35,
+      "q": "On a dendrogram, cutting LOWER (near the points) gives you:",
+      "options": [
+        "fewer, bigger groups",
+        "exactly 2 groups",
+        "more, smaller groups",
+        "no groups"
+      ],
+      "answer": 2,
+      "topic": "M5",
+      "explain": "Cut low = many small groups; cut high = few big groups."
+    },
+    {
+      "id": 36,
+      "q": "'Linkage' in hierarchical clustering is:",
+      "options": [
+        "the scaling method",
+        "the number of clusters",
+        "the outlier label",
+        "the rule for measuring distance between two GROUPS"
+      ],
+      "answer": 3,
+      "topic": "M5",
+      "explain": "Linkage = how you measure group-to-group distance (single, complete, average, ward)."
+    },
+    {
+      "id": 37,
+      "q": "Which linkage is the usual safe default for round blob-shaped groups?",
+      "options": [
+        "ward",
+        "single",
+        "none",
+        "random"
+      ],
+      "answer": 0,
+      "topic": "M5",
+      "explain": "Ward (keeps groups tightest) is the common default for round, separated blobs."
+    },
+    {
+      "id": 38,
+      "q": "Single linkage tends to:",
+      "options": [
+        "make tight round blobs",
+        "follow long chains / curvy shapes (like moons)",
+        "always fail",
+        "ignore distance"
+      ],
+      "answer": 1,
+      "topic": "M5",
+      "explain": "Single linkage uses the closest pair, so it chains along curves."
+    },
+    {
+      "id": 39,
+      "q": "The main limitation of hierarchical clustering is:",
+      "options": [
+        "it needs labels",
+        "it only finds 2 groups",
+        "it is slow on big data (compares everyone to everyone)",
+        "it cannot be plotted"
+      ],
+      "answer": 2,
+      "topic": "M5",
+      "explain": "It scales poorly — fine under ~10,000 points, painful beyond."
+    },
+    {
+      "id": 40,
+      "q": "DBSCAN groups points by:",
+      "options": [
+        "distance to a center",
+        "their labels",
+        "alphabetical order",
+        "density — wherever points are packed tightly together"
+      ],
+      "answer": 3,
+      "topic": "M5",
+      "explain": "DBSCAN finds dense 'crowds'; that's why it handles any shape."
+    }
+  ]
+}
